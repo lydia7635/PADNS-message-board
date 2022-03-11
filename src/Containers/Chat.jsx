@@ -5,6 +5,7 @@ const Chat = ({ setPage }) => {
   useEffect(() => {
     setPage("Chat");
   });
+
   return (
     <>
       <h1 className="text-3xl font-bold underline">Chat Room</h1>

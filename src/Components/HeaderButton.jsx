@@ -3,11 +3,11 @@ const HeaderButton = ({ name, selected }) => {
   return (
     <>
       {selected ? (
-        <div className="bg-gray-900 text-white px-3 py-2 rounded-md">
+        <div className="bg-indigo-700 text-white px-3 py-2 rounded-md text-lg">
           {name}
         </div>
       ) : (
-        <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">
+        <div className="text-indigo-100 hover:bg-indigo-800 hover:text-white px-3 py-2 rounded-md text-lg">
           {name}
         </div>
       )}

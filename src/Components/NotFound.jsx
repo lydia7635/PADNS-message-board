@@ -4,6 +4,7 @@ const NotFound = ({ setPage }) => {
   useEffect(() => {
     setPage("NotFound");
   });
+
   return (
     <>
       <div>404</div>
