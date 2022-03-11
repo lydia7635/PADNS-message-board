@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import myAvatar from "../../img/Leo.jpeg";
 import { useEffect } from "react";
 
 const About = ({ setPage }) => {
@@ -8,8 +9,15 @@ const About = ({ setPage }) => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <div>HW</div>
+      <div className="flex flex-col col-auto items-center justify-center h-[calc(100vh-4rem)]">
+        <img
+          className="object-cover h-60 w-60 rounded-full"
+          src={myAvatar}
+          alt="my avatar"
+        />
+        <h1 className="text-2xl m-6 font-bold">Chen, Yu-Yu</h1>
+        <div>想睡覺但寫程式寫到睡不著……</div>
+      </div>
     </>
   );
 };
