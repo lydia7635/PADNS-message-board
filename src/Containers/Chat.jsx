@@ -52,13 +52,15 @@ const Chat = ({ setPage }) => {
 
   return (
     <>
-      <MessageBoard comments={comments} />
-      <CommentForm
-        textInput={textInput}
-        handleTextInputChange={handleTextInputChange}
-        handleFormSubmit={handleFormSubmit}
-        handleImageChange={handleImageChange}
-      />
+      <div className="mb-32">
+        <MessageBoard comments={comments} />
+        <CommentForm
+          textInput={textInput}
+          handleTextInputChange={handleTextInputChange}
+          handleFormSubmit={handleFormSubmit}
+          handleImageChange={handleImageChange}
+        />
+      </div>
     </>
   );
 };

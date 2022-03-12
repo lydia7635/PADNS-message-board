@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header page={page} visitors={visitors} />
-      <div className="mt-16 mb-32">
+      <div className="mt-16">
         <Routes>
           <Route exact path="/" element={<About setPage={setPage} />} />
           <Route exact path="/chat" element={<Chat setPage={setPage} />} />
