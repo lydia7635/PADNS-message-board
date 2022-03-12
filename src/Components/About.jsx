@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import myAvatar from "../../img/Leo.jpeg";
+import myAvatar from "../../assets/img/Leo.jpeg";
 import { useEffect } from "react";
 
 const About = ({ setPage }) => {
