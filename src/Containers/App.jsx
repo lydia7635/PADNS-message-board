@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./Header";
 import About from "../Components/About";
 import Chat from "./Chat";
@@ -8,15 +7,17 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [page, setPage] = useState("About");
-  const visitors = 2;
+  const visitors = NaN;
   return (
     <>
       <Header page={page} visitors={visitors} />
-      <Routes>
-        <Route exact path="/" element={<About setPage={setPage} />} />
-        <Route exact path="/chat" element={<Chat setPage={setPage} />} />
-        <Route path="*" element={<NotFound setPage={setPage} />} />
-      </Routes>
+      <div className="mt-16">
+        <Routes>
+          <Route exact path="/" element={<About setPage={setPage} />} />
+          <Route exact path="/chat" element={<Chat setPage={setPage} />} />
+          <Route path="*" element={<NotFound setPage={setPage} />} />
+        </Routes>
+      </div>
     </>
   );
 }
