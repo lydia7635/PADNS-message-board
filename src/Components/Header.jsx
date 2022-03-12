@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import HeaderButton from "../Components/HeaderButton";
+import HeaderButton from "./HeaderButton";
 
 const Header = ({ page, visitors }) => {
   return (

@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "../Components/Header";
 import About from "../Components/About";
 import Chat from "./Chat";
 import NotFound from "../Components/NotFound";
