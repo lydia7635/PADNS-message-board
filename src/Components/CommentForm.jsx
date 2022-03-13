@@ -34,14 +34,14 @@ const CommentForm = ({
         </div>
         <div className="flex flex-col w-[calc(100%-10rem)]">
           <input
-            className="w-2/6 placeholder:text-blue-600 bg-slate-400 rounded-2xl mt-2 mb-1 p-1 text-black focus:outline outline-indigo-500 outline-2"
+            className="w-2/6 rounded-md mt-2 mb-1 p-1 placeholder:text-blue-600 bg-slate-400 text-black focus:outline outline-indigo-500 outline-2"
             name="name"
             placeholder="name"
             value={textInput.name}
             onChange={handleTextInputChange}
           />
           <textarea
-            className="placeholder:text-blue-600 bg-slate-400 rounded-2xl mt-1 mb-2 p-1 h-full text-black focus:outline outline-indigo-500 outline-2"
+            className="rounded-md mt-1 mb-2 p-1 h-full resize-none scrollbar-thin scrollbar-thumb-zinc-900 scrollbar-track-zinc-300 placeholder:text-blue-600 bg-slate-400 text-black focus:outline outline-indigo-500 outline-2"
             name="message"
             placeholder="messages..."
             value={textInput.message}
