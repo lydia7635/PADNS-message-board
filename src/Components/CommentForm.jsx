@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { ReactComponent as SendImg } from "../../assets/icons/send.svg";
+import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
+import { ReactComponent as UploadIcon } from "../../assets/icons/upload.svg";
 
 const CommentForm = ({
   textInput,
@@ -10,12 +11,27 @@ const CommentForm = ({
   return (
     <>
       <div className="bg-slate-600 fixed bottom-0 z-10 h-28 w-full flex justify-start">
-        <input
-          className="w-32"
-          type="file"
-          name="avatar"
-          onChange={handleImageChange}
-        />
+        <div className="w-28 flex items-center justify-center">
+          <input
+            id="avatar"
+            className="w-32 hidden"
+            type="file"
+            accept="image/*"
+            name="avatar"
+            onChange={handleImageChange}
+          />
+          <label
+            htmlFor="avatar"
+            className="relative h-20 w-20 rounded-full cursor-pointer"
+          >
+            <img
+              className="absolute object-cover h-20 w-20 rounded-full"
+              src={textInput.avatar}
+              alt="default avatar"
+            ></img>
+            <UploadIcon className="h-20 w-20 p-5 absolute rounded-full opacity-0 hover:opacity-75" />
+          </label>
+        </div>
         <div className="flex flex-col w-[calc(100%-10rem)]">
           <input
             className="w-2/6 placeholder:text-blue-600 bg-slate-400 rounded-2xl mt-2 mb-1 p-1 text-black focus:outline outline-indigo-500 outline-2"
@@ -33,7 +49,7 @@ const CommentForm = ({
           />
         </div>
         <button className="w-16 my-5 flex items-end justify-center">
-          <SendImg className="h-10 w-10" onClick={handleFormSubmit} />
+          <SendIcon className="h-10 w-10" onClick={handleFormSubmit} />
         </button>
       </div>
     </>

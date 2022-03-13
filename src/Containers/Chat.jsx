@@ -32,7 +32,12 @@ const Chat = ({ setPage }) => {
         id: uuidv4(),
       },
     ]);
-    setTextInput((prev) => ({ ...prev, name: "", message: "" }));
+    setTextInput((prev) => ({
+      ...prev,
+      name: "",
+      message: "",
+      avatar: defaultAvatar,
+    }));
     event.preventDefault();
   };
 
