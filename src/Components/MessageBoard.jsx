@@ -20,7 +20,7 @@ const MessageBoard = ({ comments, commentsFooter }) => {
           comments.map((comment) => (
             <div
               key={`${comment.id}`}
-              className="bg-zinc-900 m-2 rounded-lg p-2 w-4/5 flex"
+              className="bg-slate-800 m-2 rounded-lg p-2 w-4/5 flex"
             >
               <div className="w-24 flex flex-col justify-center whitespace-nowrap items-center mr-2">
                 <img

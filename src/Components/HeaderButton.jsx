@@ -10,8 +10,8 @@ const HeaderButton = ({ name, selected }) => {
       <div
         className={classNames(
           selected
-            ? "bg-indigo-700 text-white"
-            : "hover:bg-indigo-800 text-indigo-100 hover:text-white",
+            ? "bg-slate-500 text-slate-50"
+            : "hover:bg-slate-600 hover:text-slate-50",
           "cursor-pointer px-3 py-2 rounded-md text-lg"
         )}
       >
