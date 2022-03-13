@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import MessageBoard from "../Components/MessageBoard";
 import CommentForm from "../Components/CommentForm";
 import defaultAvatar from "../../assets/img/default-avatar.png";
 
 const Chat = ({ setPage }) => {
+  const inputNameRef = useRef(null);
+  const inputMessageRef = useRef(null);
   const [textInput, setTextInput] = useState({
     name: "",
     message: "",
@@ -51,8 +53,24 @@ const Chat = ({ setPage }) => {
     }
   };
 
+  const handleEnterKey = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      if (event.target.name === "name") {
+        inputMessageRef.current.focus();
+        event.preventDefault();
+      } else if (event.target.name == "message") {
+        handleFormSubmit(event);
+        inputNameRef.current.focus();
+      }
+    }
+  };
+
   useEffect(() => {
     setPage("Chat");
+  }, []);
+
+  useEffect(() => {
+    inputNameRef.current.focus();
   }, []);
 
   return (
@@ -64,6 +82,9 @@ const Chat = ({ setPage }) => {
           handleTextInputChange={handleTextInputChange}
           handleFormSubmit={handleFormSubmit}
           handleImageChange={handleImageChange}
+          handleEnterKey={handleEnterKey}
+          inputNameRef={inputNameRef}
+          inputMessageRef={inputMessageRef}
         />
       </div>
     </>

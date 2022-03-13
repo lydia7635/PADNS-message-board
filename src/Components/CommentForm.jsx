@@ -7,6 +7,9 @@ const CommentForm = ({
   handleFormSubmit,
   handleTextInputChange,
   handleImageChange,
+  handleEnterKey,
+  inputNameRef,
+  inputMessageRef,
 }) => {
   return (
     <>
@@ -39,6 +42,8 @@ const CommentForm = ({
             placeholder="name"
             value={textInput.name}
             onChange={handleTextInputChange}
+            onKeyDown={handleEnterKey}
+            ref={inputNameRef}
           />
           <textarea
             className="rounded-md mt-1 mb-2 p-1 h-full resize-none scrollbar-thin scrollbar-thumb-zinc-900 scrollbar-track-zinc-300 placeholder:text-blue-600 bg-slate-400 text-black focus:outline outline-indigo-500 outline-2"
@@ -46,11 +51,13 @@ const CommentForm = ({
             placeholder="messages..."
             value={textInput.message}
             onChange={handleTextInputChange}
+            onKeyDown={handleEnterKey}
+            ref={inputMessageRef}
           />
         </div>
         <div className="w-16 my-5 flex items-end justify-center">
           <SendIcon
-            className="h-10 w-10 cursor-pointer"
+            className="h-10 w-10 cursor-pointer hover:opacity-70"
             onClick={handleFormSubmit}
           />
         </div>
