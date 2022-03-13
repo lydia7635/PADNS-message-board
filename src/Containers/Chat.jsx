@@ -6,6 +6,7 @@ import CommentForm from "../Components/CommentForm";
 import defaultAvatar from "../../assets/img/default-avatar.png";
 
 const Chat = ({ setPage }) => {
+  const commentsFooter = useRef(null);
   const inputNameRef = useRef(null);
   const inputMessageRef = useRef(null);
   const [textInput, setTextInput] = useState({
@@ -73,10 +74,20 @@ const Chat = ({ setPage }) => {
     inputNameRef.current.focus();
   }, []);
 
+  const scrollToBottom = () => {
+    commentsFooter.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [comments]);
+
   return (
     <>
       <div className="mb-32">
-        <MessageBoard comments={comments} />
+        <MessageBoard comments={comments} commentsFooter={commentsFooter} />
         <CommentForm
           textInput={textInput}
           handleTextInputChange={handleTextInputChange}

@@ -10,7 +10,7 @@ const multipleLines = (text) =>
     </Fragment>
   ));
 
-const MessageBoard = ({ comments }) => {
+const MessageBoard = ({ comments, commentsFooter }) => {
   return (
     <>
       <div className="pt-2 flex flex-col col-auto items-center">
@@ -41,6 +41,7 @@ const MessageBoard = ({ comments }) => {
             </div>
           ))
         )}
+        <div ref={commentsFooter} />
       </div>
     </>
   );
