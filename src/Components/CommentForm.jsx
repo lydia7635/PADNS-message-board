@@ -48,9 +48,12 @@ const CommentForm = ({
             onChange={handleTextInputChange}
           />
         </div>
-        <button className="w-16 my-5 flex items-end justify-center">
-          <SendIcon className="h-10 w-10" onClick={handleFormSubmit} />
-        </button>
+        <div className="w-16 my-5 flex items-end justify-center">
+          <SendIcon
+            className="h-10 w-10 cursor-pointer"
+            onClick={handleFormSubmit}
+          />
+        </div>
       </div>
     </>
   );
